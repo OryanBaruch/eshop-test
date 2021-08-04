@@ -1,0 +1,34 @@
+<div class="register_container">
+  <div class="form_container">
+    <h1><strong>Register !</strong></h1>
+    <mat-card>
+      <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Insert username..."
+            type="text"
+            formControlName="username"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Insert password..."
+            type="password"
+            formControlName="password"
+          />
+        </mat-form-field>
+        <div class="button">
+          <button mat-raised-button color="primary" type="submit">
+            Register
+          </button>
+        </div>
+      </form>
+      <br />
+      <p>Already a registered user?</p>
+      <a routerLink="/login">login</a>
+    </mat-card>
+  </div>
+</div>

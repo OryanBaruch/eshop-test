@@ -1,0 +1,15 @@
+<div ngClass="Contianer">
+  <h1>Top 5 products</h1>
+  <mat-card ngClass='cardTable'>
+    <table>
+      <tbody>
+        Amount of sales from top to bottom:
+        <tr *ngFor="let row of this.statsOfShop; let i = index">
+         <td *ngFor="let c of row">| {{ c }}
+           <hr>
+         </td>
+        <hr>
+      </tbody>
+    </table>
+  </mat-card>
+</div>

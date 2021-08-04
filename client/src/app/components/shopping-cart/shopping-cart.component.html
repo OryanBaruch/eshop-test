@@ -1,0 +1,40 @@
+<mat-accordion>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <div ngClass="headlineAndIcon">
+        <mat-panel-title> Watch your cart so far </mat-panel-title>
+        <mat-icon>add_shopping_cart</mat-icon>
+      </div>
+    </mat-expansion-panel-header>
+    <button mat-raised-button color="warning" (click)="handleClearCart()">
+      Clear Cart
+    </button>
+    <div
+      class="shoppingCart myCart"
+      *ngFor="let cartItem of CartService?.productsInCart"
+    >
+      <mat-card class="cartContainer">
+        <p class="h3Tags">
+          <strong>product:</strong> {{ cartItem.product.title }}
+        </p>
+        <p class="h3Tags">
+          <strong>price:</strong> {{ cartItem.product.price }} $
+        </p>
+        <p class="h3Tags">
+          <strong>decription:</strong> {{ cartItem.product.description }}
+        </p>
+        <div class="imageAndButton">
+          <img class="image" src="{{ cartItem.product.image }}" alt="image" />
+        </div>
+      </mat-card>
+    </div>
+    <br />
+    <div class="totalSum">
+      Sum: {{ CartService.sum ? CartService.sum : "" }} $
+    </div>
+  </mat-expansion-panel>
+  <br />
+</mat-accordion>

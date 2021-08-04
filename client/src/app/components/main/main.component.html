@@ -1,0 +1,29 @@
+<div class="container">
+  <header>
+    <strong>Welcome {{ this.userName }}</strong>
+  </header>
+  <div ngClass="navBar">
+    <button mat-raised-button color="link" (click)="redirectStats()">
+      Stats
+    </button>
+    <button (click)="handleLogout()" mat-raised-button color="warn">
+      Logout
+    </button>
+    <button
+      *ngIf="AuthService.userInfo?.role == 0; else elseBlock"
+      (click)="handleOrder()"
+      mat-raised-button
+    >
+      Pay
+    </button>
+    <ng-template class="adminContorlls" #elseBlock>
+      <button (click)="handleAddProduct()" color="white" mat-raised-button>
+        Add
+      </button>
+    </ng-template>
+  </div>
+  <app-shopping-cart> </app-shopping-cart>
+</div>
+<div class="components">
+  <app-card-item></app-card-item>
+</div>

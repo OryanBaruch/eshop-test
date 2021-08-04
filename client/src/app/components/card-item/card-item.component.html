@@ -1,0 +1,37 @@
+<div class="container">
+  <mat-grid-list cols="4" gutterSize="15px">
+    <mat-grid-tile *ngFor="let product of this.ProductService.products">
+      <mat-card class="cartContainer">
+        <p class="h3Tags"><strong>Product:</strong> {{ product.title }}</p>
+        <p class="h3Tags"><strong>Price:</strong> {{ product.price }} $</p>
+        <p class="h3Tags">
+          <strong>Description:</strong> {{ product.description }}
+        </p>
+        <div class="imageAndButton">
+          <img class="image" src="{{ product.image }}" alt="image" />
+          <span *ngIf="AuthService.userInfo?.role == 0; else elseBlock">
+            <button
+              class="button"
+              mat-raised-button
+              color="primary"
+              (click)="handleBuyProduct(product._id)"
+            >
+              Add
+            </button>
+          </span>
+          <ng-template class="adminContorlls" #elseBlock>
+            <button
+              (click)="handleEdit(product)"
+              color="accent"
+              mat-raised-button
+              aria-label="like"
+            >
+              EDIT
+            </button>
+          </ng-template>
+        </div>
+        <br />
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

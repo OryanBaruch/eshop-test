@@ -1,0 +1,42 @@
+.shoppingCart{
+    width: 20vw;
+}
+
+.headlineAndIcon{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*  */
+
+
+.cartContainer{
+    border: 1px solid rgb(168, 168, 168);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url('https://images.pexels.com/photos/3297593/pexels-photo-3297593.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover;
+    border: 1px solid green;
+    width: 15vw;
+    height: 25vh;
+    margin-top: 50px;
+}
+
+.image{
+    height: 100px;
+    width: 180px;
+}
+
+.imageAndButton{
+    width: 15vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.h3Tags{
+    font-size: medium;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(0, 49, 58);
+}
